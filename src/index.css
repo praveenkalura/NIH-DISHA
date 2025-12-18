@@ -1,0 +1,304 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* EDIPA Professional Theme - Water/Irrigation Inspired */
+    --background: 210 20% 96%;
+    --foreground: 215 25% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 215 25% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 25% 15%;
+
+    /* Primary - Deep Teal (Water theme) */
+    --primary: 174 65% 30%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary - Light Gray Blue */
+    --secondary: 210 15% 90%;
+    --secondary-foreground: 215 25% 20%;
+
+    /* Muted */
+    --muted: 210 15% 92%;
+    --muted-foreground: 215 15% 45%;
+
+    /* Accent - Cyan */
+    --accent: 188 85% 40%;
+    --accent-foreground: 0 0% 100%;
+
+    /* Success - Green for good scores */
+    --success: 142 70% 40%;
+    --success-foreground: 0 0% 100%;
+
+    /* Warning - Amber for medium scores */
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+
+    /* Destructive - Red for poor scores */
+    --destructive: 0 72% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 210 20% 85%;
+    --input: 210 20% 85%;
+    --ring: 174 65% 30%;
+
+    --radius: 0.5rem;
+
+    /* Custom EDIPA colors */
+    --panel-bg: 210 15% 94%;
+    --header-bg: 174 65% 30%;
+    --header-text: 0 0% 100%;
+    --table-header: 210 25% 25%;
+    --table-row-alt: 210 20% 97%;
+    --indicator-card: 188 75% 35%;
+    --score-excellent: 142 70% 45%;
+    --score-good: 142 50% 55%;
+    --score-fair: 38 85% 55%;
+    --score-poor: 0 65% 55%;
+
+    /* Sidebar */
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 215 25% 10%;
+    --foreground: 210 20% 95%;
+
+    --card: 215 25% 14%;
+    --card-foreground: 210 20% 95%;
+
+    --popover: 215 25% 14%;
+    --popover-foreground: 210 20% 95%;
+
+    --primary: 174 65% 45%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 215 20% 20%;
+    --secondary-foreground: 210 20% 90%;
+
+    --muted: 215 20% 18%;
+    --muted-foreground: 210 15% 60%;
+
+    --accent: 188 75% 45%;
+    --accent-foreground: 0 0% 100%;
+
+    --success: 142 60% 50%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 38 85% 55%;
+    --warning-foreground: 0 0% 100%;
+
+    --destructive: 0 65% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 215 20% 22%;
+    --input: 215 20% 22%;
+    --ring: 174 65% 45%;
+
+    --panel-bg: 215 25% 12%;
+    --header-bg: 174 65% 35%;
+    --header-text: 0 0% 100%;
+    --table-header: 215 30% 20%;
+    --table-row-alt: 215 25% 16%;
+    --indicator-card: 188 70% 40%;
+    --score-excellent: 142 65% 50%;
+    --score-good: 142 50% 55%;
+    --score-fair: 38 80% 55%;
+    --score-poor: 0 60% 55%;
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+}
+
+@layer components {
+  .edipa-panel {
+    @apply bg-card rounded-lg shadow-md border border-border;
+  }
+
+  .edipa-header {
+    @apply bg-primary text-primary-foreground px-4 py-3 font-bold text-lg rounded-t-lg;
+  }
+
+  .edipa-section-header {
+    @apply bg-secondary text-secondary-foreground px-4 py-2 font-semibold text-sm uppercase tracking-wide;
+  }
+
+  .edipa-indicator-card {
+    @apply bg-indicator-card text-white px-4 py-4 rounded-lg shadow-md 
+           hover:shadow-lg hover:scale-[1.02] transition-all duration-200 
+           cursor-pointer font-semibold text-center;
+  }
+
+  .edipa-btn-primary {
+    @apply bg-primary hover:bg-primary/90 text-primary-foreground 
+           px-6 py-3 rounded-md font-semibold shadow-md 
+           hover:shadow-lg transition-all duration-200;
+  }
+
+  .edipa-btn-action {
+    @apply bg-accent hover:bg-accent/90 text-accent-foreground 
+           px-6 py-3 rounded-md font-semibold shadow-md 
+           hover:shadow-lg transition-all duration-200;
+  }
+
+  .edipa-table {
+    @apply w-full text-sm;
+  }
+
+  .edipa-table thead {
+    @apply bg-table-header text-white;
+  }
+
+  .edipa-table th {
+    @apply px-4 py-3 text-left font-semibold;
+  }
+
+  .edipa-table td {
+    @apply px-4 py-3 border-b border-border;
+  }
+
+  .edipa-table tbody tr:nth-child(even) {
+    @apply bg-table-row-alt;
+  }
+
+  .edipa-table tbody tr:hover {
+    @apply bg-muted;
+  }
+
+  .edipa-input {
+    @apply w-full px-3 py-2 rounded-md border border-input bg-background 
+           focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent
+           transition-all duration-200;
+  }
+
+  .edipa-label {
+    @apply text-sm font-semibold text-foreground mb-1 block;
+  }
+
+  .score-badge {
+    @apply inline-flex items-center justify-center min-w-[2.5rem] px-2 py-1 
+           rounded-full text-sm font-bold text-white;
+  }
+
+  .score-excellent {
+    @apply bg-score-excellent;
+  }
+
+  .score-good {
+    @apply bg-score-good;
+  }
+
+  .score-fair {
+    @apply bg-score-fair;
+  }
+
+  .score-poor {
+    @apply bg-score-poor;
+  }
+}
+
+@layer utilities {
+  .bg-panel {
+    background-color: hsl(var(--panel-bg));
+  }
+
+  .bg-indicator-card {
+    background-color: hsl(var(--indicator-card));
+  }
+
+  .bg-table-header {
+    background-color: hsl(var(--table-header));
+  }
+
+  .bg-table-row-alt {
+    background-color: hsl(var(--table-row-alt));
+  }
+
+  .bg-score-excellent {
+    background-color: hsl(var(--score-excellent));
+  }
+
+  .bg-score-good {
+    background-color: hsl(var(--score-good));
+  }
+
+  .bg-score-fair {
+    background-color: hsl(var(--score-fair));
+  }
+
+  .bg-score-poor {
+    background-color: hsl(var(--score-poor));
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.3s ease-out;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.4s ease-out;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.3s ease-out;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
